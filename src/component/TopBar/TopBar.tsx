@@ -8,9 +8,11 @@ import { authModalState } from "@/atoms/authModalAtom";
 import { useSetRecoilState } from "recoil";
 import { useRouter } from "next/router";
 
-type TopBarProps = {};
+type TopBarProps = {
+  problemPage?: boolean;
+};
 
-const TopBar: React.FC<TopBarProps> = () => {
+const TopBar: React.FC<TopBarProps> = ({ problemPage }) => {
   const [user] = useAuthState(auth);
   const setAuthModalState = useSetRecoilState(authModalState);
   // const router = useRouter();
