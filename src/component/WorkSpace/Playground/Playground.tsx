@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import PreferenceNav from "./PreferenceNav/PreferenceNav";
 import Split from "react-split";
-// import CodeMirror from "@uiw/react-codemirror";
-// import { vscodeDark } from "@uiw/codemirror-theme-vscode";
-// import { javascript } from "@codemirror/lang-javascript";
-import EditorFooter from "./EditorFooter";
+import CodeMirror from "@uiw/react-codemirror";
+import { vscodeDark } from "@uiw/codemirror-theme-vscode";
+import { javascript } from "@codemirror/lang-javascript";
+import EditorFooter from './EditorFooter';
 import { Problem } from "@/utils/types/problem";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, firestore } from "@/firebase/firebase";
@@ -28,13 +28,14 @@ const Playground:React.FC<PlaygroundProps> = () => {
 
 			<Split className='h-[calc(100vh-94px)]' direction='vertical' sizes={[60, 40]} minSize={60}>
 				<div className='w-full overflow-auto'>
-					{/* <CodeMirror
-						value={userCode}
+					<CodeMirror
+						value="const a=1"
+						// {userCode}
 						theme={vscodeDark}
-						onChange={onChange}
+						//onChange={onChange}
 						extensions={[javascript()]}
-						style={{ fontSize: settings.fontSize }}
-					/> */}
+						//style={{ fontSize: settings.fontSize }}
+					/>
 				</div>
 				<div className='w-full px-5 overflow-auto'>
 					{/* testcase heading */}
